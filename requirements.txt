@@ -1,0 +1,9 @@
+d3rlpy==1.0.0
+gymnasium==1.0.0
+ipython==8.12.3
+minari==0.5.3
+numpy==1.21.0
+pandas==2.0.3
+scikit_learn==1.0.2
+torch==2.4.1
+tqdm==4.65.0

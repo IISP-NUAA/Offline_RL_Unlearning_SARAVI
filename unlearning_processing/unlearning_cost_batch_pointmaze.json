@@ -1,0 +1,58 @@
+{
+  "defaults": {
+    "reference_baseline_steps": 10000,
+    "maximum_steps": 100000,
+    "eval_interval": 1000,
+    "shuffle": 1,
+    "batch_size": 512,
+    "seeds": [0, 1024, 42, 46, 47],
+    "methods": [
+      "SARAVI",
+      "NegativeReward",
+      "RandomReward",
+      "Finetuning",
+      "Retraining"
+    ],
+    "model_to_unlearn_dir": "../Offline_RL_processing/Fully_trained/pointmaze",
+    "retrain_dir": "../Offline_RL_processing/Retrain/pointmaze",
+    "dataset": "pointmaze",
+    "datasets": [
+      "large-dense-v2",
+      "umaze-dense-v2",
+      "medium-dense-v2"
+    ]
+  },
+  "jobs": [
+    {
+      "name": "pointmaze_iql_forget_large",
+      "algo": "IQL",
+      "retained_ratios": [0.0, 1.0, 1.0]
+    },
+    {
+      "name": "pointmaze_iql_forget_umaze",
+      "algo": "IQL",
+      "retained_ratios": [1.0, 0.0, 1.0]
+    },
+
+    {
+      "name": "pointmaze_plasp_forget_large",
+      "algo": "PLASP",
+      "retained_ratios": [0.0, 1.0, 1.0]
+    },
+    {
+      "name": "pointmaze_plasp_forget_umaze",
+      "algo": "PLASP",
+      "retained_ratios": [1.0, 0.0, 1.0]
+    },
+    {
+      "name": "pointmaze_td3plusbc_forget_large",
+      "algo": "TD3PLUSBC",
+      "retained_ratios": [0.0, 1.0, 1.0]
+    },
+    {
+      "name": "pointmaze_td3plusbc_forget_umaze",
+      "algo": "TD3PLUSBC",
+      "retained_ratios": [1.0, 0.0, 1.0]
+    }
+  ]
+}

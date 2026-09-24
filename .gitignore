@@ -1,0 +1,8 @@
+*.pt
+*.zip
+*.z01
+__pycache__/
+*.pyc
+
+# ORL-Auditor per-trajectory detail files are intentionally not persisted.
+/Offline_RL_processing/stats_results_orl_auditor/**/audit_details_seed*.csv
